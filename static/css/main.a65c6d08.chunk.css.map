@@ -1,0 +1,1 @@
+{"version":3,"sources":["globals.css"],"names":[],"mappings":"AAAA,UACE,kBACF,CAEA,SACE,cACF","file":"main.a65c6d08.chunk.css","sourcesContent":[".bg-black {\r\n  background: #282d31;\r\n}\r\n\r\n.pointer {\r\n  cursor: pointer;\r\n}\r\n"]}
