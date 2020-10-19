@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7cb3cf8efdabba9e698bc02af1bd726",
+    "revision": "b0fdc2a67c87db91fe6ef5aa999135af",
     "url": "/react-cart/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-cart/static/css/2.c0a2b1fa.chunk.css"
   },
   {
-    "revision": "696fbd0f98bee6f6c12a",
+    "revision": "5bbd87a1e797664656fc",
     "url": "/react-cart/static/css/main.a65c6d08.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-cart/static/js/2.b7434b7f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "696fbd0f98bee6f6c12a",
-    "url": "/react-cart/static/js/main.60819b4c.chunk.js"
+    "revision": "5bbd87a1e797664656fc",
+    "url": "/react-cart/static/js/main.f872b508.chunk.js"
   },
   {
     "revision": "cecc71dd9334949e8d73",
