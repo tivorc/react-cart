@@ -38,10 +38,14 @@ function reducer(state, action) {
           ...state,
         };
 
-      items[index] = {
-        ...items[index],
-        quantity: items[index].quantity - 1,
-      };
+      if (items[index].quantity - 1 === 0) {
+        items = items.filter((ci) => ci.id !== action.payload.id);
+      } else {
+        items[index] = {
+          ...items[index],
+          quantity: items[index].quantity - 1,
+        };
+      }
 
       return {
         items: [...items],

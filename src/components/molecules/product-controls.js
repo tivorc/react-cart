@@ -18,7 +18,9 @@ export default function ProductControls({ quantity, onRemove, onAdd }) {
       >
         -
       </button>
-      <span className="col-md-7 text-center">{quantity + " "} en carrito</span>
+      <span className="col-md-7 text-center px-2">
+        {quantity + " "} en carrito
+      </span>
       <button
         type="button"
         className="btn btn-secondary"

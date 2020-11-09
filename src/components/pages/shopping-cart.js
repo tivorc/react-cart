@@ -52,9 +52,11 @@ function ShoppingCart(props) {
 
   return (
     <MainLayout>
-      <h1 style={{ marginTop: "70px" }}>Carrito de compras</h1>
+      <h1 style={{ marginTop: "70px" }} className="text-white">
+        Carrito de compras
+      </h1>
       <div className="row">
-        <div className="col-md-9">
+        <div className="col-md-9 p-1 p-md-2">
           <div className="card">
             <div className="card-header bg-white d-flex justify-content-between">
               <span>Tiene {totalItems} productos en el carrito</span>
@@ -71,7 +73,8 @@ function ShoppingCart(props) {
               <table className="table mb-0">
                 <tbody>
                   <tr>
-                    <th scope="col" colSpan="2" className="text-center">
+                    <th className="d-md-table-cell d-none"></th>
+                    <th scope="col" className="text-center">
                       Producto
                     </th>
                     <th scope="col" className="text-center">

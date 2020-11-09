@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 import { context } from "../../context";
 import cart from "../../assets/images/shopping-cart.svg";
+import { Float } from "../molecules";
 
 export default function Navbar() {
   const { totalItems } = useContext(context);
@@ -10,6 +11,10 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black mb-2 border-bottom shadow-sm fixed-top">
       <div className="container">
+        <Float totalItems={totalItems} />
+        <Link className="navbar-brand" to="/">
+          Monago's Store
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -22,9 +27,6 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <Link className="navbar-brand" to="/">
-            Monago's Store
-          </Link>
           <ul className="navbar-nav mr-auto mb-2 mb-lg-0">
             <li className="nav-item">
               <NavLink className="nav-link" to="/shopping-cart">

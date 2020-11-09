@@ -5,7 +5,7 @@ import { Context } from "./context";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "./assets/styles/globals.css";
-import "bootstrap/dist/js/bootstrap.bundle.min";
+// import "bootstrap/dist/js/bootstrap.bundle.min";
 
 ReactDOM.render(
   <React.StrictMode>

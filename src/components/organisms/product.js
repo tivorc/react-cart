@@ -15,7 +15,7 @@ export default function Product(props) {
   }
 
   return (
-    <div className="col-md-4">
+    <div className="col-md-4 col-6 mx-0 px-0">
       <div className="card mx-2 mb-3 px-0">
         <img
           style={{ height: 220, objectFit: "cover" }}
@@ -24,7 +24,7 @@ export default function Product(props) {
           alt={name}
         />
 
-        <div className="card-body">
+        <div className="card-body p-md-2 p-1">
           <h6 className="card-title text-dark">{name}</h6>
           <h6 className="card-subtitle mb-2 text-muted">
             S/. {price.toFixed(2)}

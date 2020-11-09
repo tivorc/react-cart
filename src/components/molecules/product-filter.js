@@ -2,9 +2,9 @@ import React from "react";
 
 export default function ProductFilter({ order, setOrder }) {
   return (
-    <div className="col-md-5 row">
-      <span className="col-md-4 text-right">Ordenar por:</span>
-      <div className="form-group col-md-6 pr-0">
+    <div className="col-md-5 row justify-content-center justify-content-md-start">
+      <span className="col-md-5 text-left text-md-right">Ordenar por:</span>
+      <div className="form-group col-md-7 pr-0 mb-md-0 mb-3">
         <select
           className="form-select"
           value={order}

@@ -30,20 +30,22 @@ export default function ProductList({ products: p }) {
 
   const pageCount = Math.ceil(p.length / itemsPerPage);
   return (
-    <div className="col-md-9 mt-4">
+    <div className="col-md-9 mt-md-4 mt-2">
       <div className="row">
         <ProductFilter order={order} setOrder={setOrder} />
         <div className="col-md-7">
           <ReactPaginate
-            previousLabel={<span className="page-link">Anterior</span>}
-            nextLabel={<span className="page-link">Siguiente</span>}
+            previousLabel={<span className="page-link">{`<`}</span>}
+            nextLabel={<span className="page-link">{`>`}</span>}
             breakLabel={<span className="page-link">...</span>}
             breakClassName={"break-me"}
             pageCount={pageCount}
-            marginPagesDisplayed={2}
-            pageRangeDisplayed={5}
+            marginPagesDisplayed={1}
+            pageRangeDisplayed={2}
             onPageChange={handlePageClick}
-            containerClassName={"pagination justify-content-end"}
+            containerClassName={
+              "pagination justify-content-center justify-content-md-end"
+            }
             pageLinkClassName={"page-link"}
             activeClassName={"active"}
             pageClassName={"page-item"}
