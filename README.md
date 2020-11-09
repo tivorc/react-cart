@@ -2,7 +2,7 @@
 
 ![App](./.readme-static/Capture.PNG)
 
-[See the app](https://github.com/tivorc/react-cart)
+[See the app](https://tivorc.github.io/react-cart)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
