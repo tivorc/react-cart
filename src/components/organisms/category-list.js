@@ -1,50 +1,39 @@
 import React, { useState } from "react";
 import { Category } from "../molecules";
 import { Collapse } from "../organisms";
+import arrowDown from "../../assets/images/arrow-down.svg";
 
-export default function CategoryList({ categories, category, onChange }) {
-  const total = categories.reduce((a, b) => a + b.total, 0);
+const ALL = {
+  id: "",
+  name: "Todos",
+  total: 0,
+};
+
+export default function CategoryList({ categories: c, category, onChange }) {
   const [isOpen, setIsOpen] = useState(!(window.innerWidth < 576));
 
+  const total = c.reduce((a, b) => a + b.total, 0);
+  const categories = [{ ...ALL, total: total }, ...c];
   return (
     <div className="col-md-3">
-      {/* <div className="card sticky-md-top" style={{ top: "75px" }}> */}
       <div className="card sticky-md-top mt-4">
         <div
           className="card-header text-dark"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <svg
-            width="1em"
-            height="1em"
-            viewBox="0 0 16 16"
-            className="bi bi-caret-down-fill"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
-          </svg>
+          <img className="me-1" src={arrowDown} alt="cart logo" />
           Categorías
         </div>
         <Collapse classNames="card-body p-0" isOpen={isOpen}>
           <ul className="list-group list-group-flush">
-            <Category
-              category={category}
-              id={""}
-              onChange={onChange}
-              name="Todos"
-              total={total}
-            />
-            {categories.map((c) => {
-              return (
-                <Category
-                  key={c.id}
-                  category={category}
-                  {...c}
-                  onChange={onChange}
-                />
-              );
-            })}
+            {categories.map((c) => (
+              <Category
+                key={c.id}
+                category={category}
+                {...c}
+                onChange={onChange}
+              />
+            ))}
           </ul>
         </Collapse>
       </div>
