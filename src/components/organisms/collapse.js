@@ -1,43 +1,30 @@
 import React, { useRef, useEffect } from "react";
-import { Collapse as Col } from "bootstrap/dist/js/bootstrap.esm.js";
+import { Collapse as C } from "bootstrap/dist/js/bootstrap.esm.js";
 
-export default function Collapse({
-  children,
-  classNames,
-  isOpen,
-  category,
-  dispatch,
-}) {
-  const element = useRef(null);
+export default function Collapse({ children, classNames, isOpen }) {
+  const div = useRef(null);
   const collapse = useRef(null);
-  const isMovil = useRef(window.innerWidth < 576);
 
   useEffect(() => {
-    const el = element.current;
-    collapse.current = new Col(el, {
-      toggle: isMovil.current,
+    collapse.current = new C(div.current, {
+      toggle: false,
     });
-    // dispatch({ type: "set", payload: !isMovil.current });
-    // }, [dispatch]);
   }, []);
 
   useEffect(() => {
-    if (isOpen) {
-      collapse.current.show();
+    let id;
+    if (collapse.current._isTransitioning) {
+      id = setTimeout(() => {
+        collapse.current[isOpen ? "show" : "hide"]();
+      }, 360);
     } else {
-      collapse.current.hide();
+      collapse.current[isOpen ? "show" : "hide"]();
     }
+    return () => clearTimeout(id);
   }, [isOpen]);
 
-  useEffect(() => {
-    if (isMovil.current) {
-      dispatch({ type: "set", payload: false });
-      // collapse.current.hide();
-    }
-  }, [category, dispatch]);
-
   return (
-    <div ref={element} className={classNames + " collapse show"}>
+    <div ref={div} className={classNames + " collapse"}>
       {children}
     </div>
   );

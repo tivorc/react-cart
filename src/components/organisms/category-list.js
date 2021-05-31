@@ -1,21 +1,10 @@
-import React, { useReducer } from "react";
+import React, { useState } from "react";
 import { Category } from "../molecules";
 import { Collapse } from "../organisms";
 
-function reducer(state, action) {
-  switch (action.type) {
-    case "toggle":
-      return !state;
-    case "set":
-      return action.payload;
-    default:
-      break;
-  }
-}
-
 export default function CategoryList({ categories, category, onChange }) {
   const total = categories.reduce((a, b) => a + b.total, 0);
-  const [collapse, dispatch] = useReducer(reducer, true);
+  const [isOpen, setIsOpen] = useState(!(window.innerWidth < 576));
 
   return (
     <div className="col-md-3">
@@ -23,7 +12,7 @@ export default function CategoryList({ categories, category, onChange }) {
       <div className="card sticky-md-top mt-4">
         <div
           className="card-header text-dark"
-          onClick={() => dispatch({ type: "toggle" })}
+          onClick={() => setIsOpen(!isOpen)}
         >
           <svg
             width="1em"
@@ -37,12 +26,7 @@ export default function CategoryList({ categories, category, onChange }) {
           </svg>
           Categorías
         </div>
-        <Collapse
-          classNames="card-body p-0"
-          isOpen={collapse}
-          dispatch={dispatch}
-          category={category}
-        >
+        <Collapse classNames="card-body p-0" isOpen={isOpen}>
           <ul className="list-group list-group-flush">
             <Category
               category={category}
