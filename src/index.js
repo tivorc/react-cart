@@ -3,9 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { Context } from "./context";
 
-import "bootstrap/dist/css/bootstrap.css";
-import "./assets/styles/globals.css";
-// import "bootstrap/dist/js/bootstrap.bundle.min";
+import "./assets/styles/custom.scss";
 
 ReactDOM.render(
   <React.StrictMode>

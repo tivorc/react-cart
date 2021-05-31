@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,400,700);
+$font-family-base: Nunito;
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:200,300,400,700);
+$headings-font-family: Comfortaa;
+
+$primary: #07689f;
+$secondary: #c9d6df;
+$success: #11d3bc;
+$danger: #f67280;
+$info: #a2d5f2;
+$warning: #ff7e67;
+$light: #fafafa;
+$dark: #4e4e4e;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+);
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+.bg-black {
+  background: #282d31;
+}
+
+.pointer {
+  cursor: pointer;
+}
