@@ -1,15 +1,17 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Collapse as C } from "bootstrap/dist/js/bootstrap.esm.js";
 
 export default function Collapse({ children, classNames, isOpen }) {
   const div = useRef(null);
   const collapse = useRef(null);
+  const [state] = useState(isOpen);
 
   useEffect(() => {
+    div.current.classList.toggle("show", state);
     collapse.current = new C(div.current, {
       toggle: false,
     });
-  }, []);
+  }, [state]);
 
   useEffect(() => {
     let id;
@@ -24,7 +26,7 @@ export default function Collapse({ children, classNames, isOpen }) {
   }, [isOpen]);
 
   return (
-    <div ref={div} className={classNames + " collapse show"}>
+    <div ref={div} className={classNames + " collapse"}>
       {children}
     </div>
   );
