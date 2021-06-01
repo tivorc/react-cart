@@ -40,7 +40,7 @@ export default function CartRow(props) {
           onAdd={handlerAdd}
         />
       </td>
-      <td className="text-right align-middle pr-md-4 p-1">
+      <td className="text-end align-middle pe-md-4 p-1">
         S/. {(price * quantity).toFixed(2)}
       </td>
     </tr>

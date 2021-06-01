@@ -27,7 +27,7 @@ export default function Toast() {
       <div className="toast-body">Hello, world! This is a toast message.</div>
       <button
         type="button"
-        className="btn-close btn-close-white ml-auto mr-2"
+        className="btn-close btn-close-white ms-auto me-2"
         data-dismiss="toast"
         aria-label="Close"
       ></button>

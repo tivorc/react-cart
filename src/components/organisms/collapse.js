@@ -24,7 +24,7 @@ export default function Collapse({ children, classNames, isOpen }) {
   }, [isOpen]);
 
   return (
-    <div ref={div} className={classNames + " collapse"}>
+    <div ref={div} className={classNames + " collapse show"}>
       {children}
     </div>
   );

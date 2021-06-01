@@ -80,7 +80,7 @@ function ShoppingCart(props) {
                     <th scope="col" className="text-center">
                       Cantidad
                     </th>
-                    <th scope="col" className="text-right pr-4">
+                    <th scope="col" className="text-end pe-4">
                       Precio
                     </th>
                   </tr>
@@ -89,10 +89,7 @@ function ShoppingCart(props) {
                   ))}
 
                   <tr>
-                    <td
-                      colSpan="4"
-                      className="text-right font-weight-bold pr-4"
-                    >
+                    <td colSpan="4" className="text-end font-weight-bold pe-4">
                       S/. {total.toFixed(2)}
                     </td>
                   </tr>
@@ -103,7 +100,7 @@ function ShoppingCart(props) {
               {totalItems > 0 && (
                 <button
                   onClick={handleConfirm}
-                  className="btn btn-primary ml-4"
+                  className="btn btn-primary ms-4"
                 >
                   CONFIRMAR COMPRA
                 </button>
